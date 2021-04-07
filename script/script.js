@@ -5,9 +5,9 @@ var app = new Vue ({
     listaMail:[],
   },
 
-  mounted: function () {
+  mounted: function() {
 
-    for (var i = 0; i < this.listaMail.length < 10; i++) {
+    for (var i = 0; i < 10; i++) {
 
       axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
       .then( (response) => {
@@ -15,7 +15,6 @@ var app = new Vue ({
         let email = result.response;
 
         this.listaMail.push(email);
-        console.log(this.listaMail);
       });
     };
   }
